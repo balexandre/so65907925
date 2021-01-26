@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+</head>
+<body>
+    <h1>Create a post with image</h1>
+    <form method="post" action="/newpost-withfile" enctype="multipart/form-data">
+        <input type="text" placeholder="Enter post title" id="title" name="title">
+        <input type="file" accept="image/png" id="newImage" name="newImage">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
