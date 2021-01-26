@@ -1,7 +1,5 @@
 const express = require('express')
 const upload = require('multer')()
-const upload2 = upload.single('newImage')
-
 const fs = require('fs')
 const path = require('path')
 const { v4: uuidv4 } = require('uuid')
@@ -25,6 +23,7 @@ const fnCreatePost = () => {
         ? Promise.reject(new Error(`couldn't create a new post`))
         : Promise.resolve(uuidv4())
 }
+
 router.post('/newpost-withfile', upload.single('newImage'), async (req, res) => {
     try {
         const { title } = req.body
@@ -37,6 +36,7 @@ router.post('/newpost-withfile', upload.single('newImage'), async (req, res) => 
         res.render('error', { err })
     }
 })
+
 router.get('/', (req, res) => {
     res.render('index')
 })
